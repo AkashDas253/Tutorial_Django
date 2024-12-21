@@ -1,7 +1,3 @@
-Here's an expanded note on Django Class-Based Views (CBVs), including new sections such as custom CBVs and additional concepts:
-
----
-
 ## **Django Class-Based Views (CBVs)**
 
 Class-Based Views (CBVs) provide a more modular and object-oriented approach to handling HTTP requests and responses in Django. These views abstract common functionality into reusable classes, promoting cleaner and more maintainable code.

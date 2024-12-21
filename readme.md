@@ -26,24 +26,12 @@ This repository is meant to contain the learning and practice done using django.
         - [Decorators for FBVs](lessons/fbv_decorator/readme.md)
   - [Class-Based Views (CBVs)](lessons/cbv/readme.md)
     - [Types](lessons/cbv_types/readme.md)
-        - Generic Views
-          - `TemplateView`
-          - `RedirectView`
-        - Detail Views
-          - `DetailView`
-        - List Views
-          - `ListView`
-        - Form Views
-          - `FormView`
-        - CRUD Operations
-          - `CreateView`
-          - `UpdateView`
-          - `DeleteView`
-      - **Mixin Views**
-        - `LoginRequiredMixin`
-        - `PermissionRequiredMixin`
-        - `ContextMixin`
 
+- [Templates](lessons/templates/readme.md)
+
+- [URL Pattern](lessons/url_pattern/readme.md)
+- [URL Namespace](lessons/url_namespace/readme.md)
+- [URL Reverse](lessons/url_reverse/readme.md)
 
 - Third-Party Tools and Integrations
   - [Django REST Framework (DRF)](lessons/drf/readme.md)
