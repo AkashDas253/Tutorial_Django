@@ -2,6 +2,29 @@
 
 Django's Class-Based Views (CBVs) offer a powerful and flexible way to organize view logic. CBVs can be categorized into various types and subtypes based on their functionality. Below is a comprehensive breakdown of these types and their common subtypes.
 
+### **Category and Subcategory**
+
+| **Category**            | **Subcategory**                    | **Description**                                                                                                                                         |
+|--------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Base Views**           | `View`                            | Handles basic HTTP methods (GET, POST, etc.), providing a foundation for custom views.                                                                  |
+| **Generic Model Views**  | `ListView`                        | Displays a list of objects from a model.                                                                                                                |
+|                          | `DetailView`                      | Displays details of a single model object.                                                                                                              |
+|                          | `CreateView`                      | Handles creating new objects via forms.                                                                                                                 |
+|                          | `UpdateView`                      | Handles updating existing objects via forms.                                                                                                            |
+|                          | `DeleteView`                      | Handles deleting objects and redirects upon success.                                                                                                    |
+| **Mixin-Based Views**    | `LoginRequiredMixin`              | Ensures that only authenticated users can access the view.                                                                                              |
+|                          | `PermissionRequiredMixin`         | Restricts access to users with specific permissions.                                                                                                    |
+| **Template-Based Views** | `TemplateView`                    | Renders a template with optional context data.                                                                                                          |
+| **Redirect Views**       | `RedirectView`                    | Redirects users to another URL or view.                                                                                                                 |
+| **Form-Based Views**     | `FormView`                        | Handles form rendering, submission, and validation, with optional redirection on success.                                                               |
+| **Generic Editing Views**| `BaseCreateView`                  | Specialized version of `CreateView` for more control.                                                                                                   |
+|                          | `BaseUpdateView`                  | Specialized version of `UpdateView` for more control.                                                                                                   |
+| **Mixin Views**          | `ContextMixin`                    | Adds custom context data to templates.                                                                                                                  |
+|                          | `SingleObjectMixin`               | Used to retrieve a single object in views like `DetailView`.                                                                                            |
+|                          | `FormMixin`                       | Provides form handling features to a view.                                                                                                              |
+
+---
+
 ### 1. **Base Views**
 Base views are generic views that provide the foundational functionality for handling HTTP requests. They can be extended by other views for more specific use cases.
 
