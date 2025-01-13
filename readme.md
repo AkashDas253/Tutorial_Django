@@ -12,7 +12,7 @@ This repository is meant to contain the learning and practice done using django.
 
 - [Core of Django](lessons/core/readme.md)
 
-- Models (Database Layer)
+- [Models (Database Layer)](lessons/model/readme.md)
 
   - [**Model Definition**](lessons/model_creation/readme.md)
   - [**Model Relationships**](lessons/model_relationships/readme.md) 
