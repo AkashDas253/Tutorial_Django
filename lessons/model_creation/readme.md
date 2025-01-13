@@ -1,5 +1,7 @@
 ## Model Definition
 
+---
+
 ### Syntax:
   ```python
   # app/models.py
@@ -22,126 +24,10 @@
           return string_representation  # Return string representation of object
 ```
 
-### Common Field Types
-- `CharField(max_length=100, **options)`  # String field with max length
-  - `max_length`: Maximum length of the string
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-  - `unique`: Ensure unique values
-  - `choices`: Define choices for the field
-- `TextField(**options)`  # Large text field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `IntegerField(**options)`  # Integer field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-  - `unique`: Ensure unique values
-- `FloatField(**options)`  # Float field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-  - `unique`: Ensure unique values
-- `BooleanField(**options)`  # Boolean field
-  - `null`: Allow NULL values
-  - `default`: Set default value
-- `DateField(**options)`  # Date field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `DateTimeField(**options)`  # Date and time field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `EmailField(**options)`  # Email field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-  - `unique`: Ensure unique values
-- `URLField(**options)`  # URL field
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-  - `unique`: Ensure unique values
-- `FileField(upload_to='uploads/', **options)`  # File upload field
-  - `upload_to`: Directory to upload files
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `ImageField(upload_to='images/', **options)`  # Image upload field
-  - `upload_to`: Directory to upload images
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-
-### Field Options
-- `null=True`  # Allow NULL values
-- `blank=True`  # Allow blank values
-- `default=value`  # Set default value
-- `unique=True`  # Ensure unique values
-- `choices=[(value1, 'Label1'), (value2, 'Label2')]`  # Define choices for the field
-
-### Relation Fields
-- `AutoField(primary_key=True, **options)`  # Define a primary key (automatically added by Django)
-  - `primary_key`: Set as primary key
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `ForeignKey('OtherModel', on_delete=models.CASCADE, **options)`  # Define a foreign key relationship
-  - `on_delete`: Behavior when the referenced object is deleted
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `OneToOneField('OtherModel', on_delete=models.CASCADE, **options)`  # Define a one-to-one relationship
-  - `on_delete`: Behavior when the referenced object is deleted
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-- `ManyToManyField('OtherModel', **options)`  # Define a many-to-many relationship
-  - `null`: Allow NULL values
-  - `blank`: Allow blank values
-  - `default`: Set default value
-
-### Model Methods
-- `save(force_insert=False, force_update=False, using=None, update_fields=None)`  # Save the current instance
-  - `force_insert`: Force an SQL INSERT
-  - `force_update`: Force an SQL UPDATE
-  - `using`: Database alias to use
-  - `update_fields`: Fields to update
-- `delete(using=None, keep_parents=False)`  # Delete the current instance
-  - `using`: Database alias to use
-  - `keep_parents`: Keep parent relationships
-- `get_absolute_url()`  # Return the absolute URL for the instance
-- `clean()`  # Validate the model instance
-- `__str__()`  # Return a string representation of the instance
-
-### Meta Options
-- `ordering = ['field_name']`  # Default ordering
-  - `ordering`: List of fields to order by
-- `verbose_name = "Model Name"`  # Human-readable name for the model
-  - `verbose_name`: Singular name for the model
-- `verbose_name_plural = "Model Names"`  # Human-readable plural name for the model
-  - `verbose_name_plural`: Plural name for the model
-- `db_table = 'table_name'`  # Custom database table name
-  - `db_table`: Name of the database table
-- `unique_together = (('field1', 'field2'),)`  # Unique constraint across multiple fields
-  - `unique_together`: Fields that must be unique together
-- `index_together = (('field1', 'field2'),)`  # Index constraint across multiple fields
-  - `index_together`: Fields that should be indexed together
-
-
-
-### **Django Models: Comprehensive Note**
-
-Django **models** act as the interface to your database, enabling you to define data structure and interact with it using Python code. A model is a Python class derived from `django.db.models.Model`, and each attribute of the class represents a database field.
-
 ---
 
 
 
----
 
 ### **Common Model Fields and Their Parameters**
 
@@ -179,69 +65,44 @@ Django **models** act as the interface to your database, enabling you to define 
 
 ---
 
-### **Model Definition Example**
+### Relation Fields
 
-```python
-from django.db import models
-
-class Product(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    available = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-```
+| **Field Type**       | **Description**                       | **Syntax Example**                                         | **Parameters with default value and description with type**                                                              | **Required Parameter**       |
+|----------------------|---------------------------------------|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| `AutoField`          | Define a primary key (automatically added by Django) | `models.AutoField(primary_key=True, **options)`            | `primary_key=True`: Set as primary key (bool), `null=False`: Allow NULL values (bool), `blank=False`: Allow blank values (bool), `default=None`: Set default value (any) | `primary_key`                |
+| `ForeignKey`         | Define a foreign key relationship     | `models.ForeignKey('OtherModel', on_delete=models.CASCADE, **options)` | `on_delete=models.CASCADE`: Behavior when the referenced object is deleted (function), `null=False`: Allow NULL values (bool), `blank=False`: Allow blank values (bool), `default=None`: Set default value (any) | `on_delete`                  |
+| `OneToOneField`      | Define a one-to-one relationship      | `models.OneToOneField('OtherModel', on_delete=models.CASCADE, **options)` | `on_delete=models.CASCADE`: Behavior when the referenced object is deleted (function), `null=False`: Allow NULL values (bool), `blank=False`: Allow blank values (bool), `default=None`: Set default value (any) | `on_delete`                  |
+| `ManyToManyField`    | Define a many-to-many relationship    | `models.ManyToManyField('OtherModel', **options)`          | `null=False`: Allow NULL values (bool), `blank=False`: Allow blank values (bool), `default=None`: Set default value (any) | None                         |
 
 ---
 
-### **Field Relationships**
-
-#### **ForeignKey Example**
-```python
-class Author(models.Model):
-    name = models.CharField(max_length=50)
-
-class Book(models.Model):
-    title = models.CharField(max_length=100)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
-```
-
-#### **OneToOneField Example**
-```python
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True)
-```
-
-#### **ManyToManyField Example**
-```python
-class Student(models.Model):
-    name = models.CharField(max_length=50)
-
-class Course(models.Model):
-    title = models.CharField(max_length=100)
-    students = models.ManyToManyField(Student, related_name="courses")
-```
+### Model Methods
+- `save(force_insert=False, force_update=False, using=None, update_fields=None)`  # Save the current instance
+  - `force_insert`: Force an SQL INSERT
+  - `force_update`: Force an SQL UPDATE
+  - `using`: Database alias to use
+  - `update_fields`: Fields to update
+- `delete(using=None, keep_parents=False)`  # Delete the current instance
+  - `using`: Database alias to use
+  - `keep_parents`: Keep parent relationships
+- `get_absolute_url()`  # Return the absolute URL for the instance
+- `clean()`  # Validate the model instance
+- `__str__()`  # Return a string representation of the instance
 
 ---
 
-### **Meta Class in Models**
-The `Meta` class provides metadata options for a model.
-
-```python
-class Product(models.Model):
-    name = models.CharField(max_length=100)
-
-    class Meta:
-        ordering = ['name']
-        verbose_name = "Product"
-        verbose_name_plural = "Products"
-```
+### Meta Options
+- `ordering = ['field_name']`  # Default ordering
+  - `ordering`: List of fields to order by
+- `verbose_name = "Model Name"`  # Human-readable name for the model
+  - `verbose_name`: Singular name for the model
+- `verbose_name_plural = "Model Names"`  # Human-readable plural name for the model
+  - `verbose_name_plural`: Plural name for the model
+- `db_table = 'table_name'`  # Custom database table name
+  - `db_table`: Name of the database table
+- `unique_together = (('field1', 'field2'),)`  # Unique constraint across multiple fields
+  - `unique_together`: Fields that must be unique together
+- `index_together = (('field1', 'field2'),)`  # Index constraint across multiple fields
+  - `index_together`: Fields that should be indexed together
 
 ---
-
-This note provides a detailed overview of Django models, including field types, parameters, relationships, and examples. Let me know if you’d like to dive deeper into advanced features or specific use cases!
