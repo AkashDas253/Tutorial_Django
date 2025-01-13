@@ -20,10 +20,8 @@ This repository is meant to contain the learning and practice done using django.
   - [**Database Migrations**](lessons/database_migration/readme.md)  
   - [**Model Methods** ](lessons/model_methods/readme.md) 
 
-
----
-
 - Views (Business Logic Layer)
+
   - [Function-Based Views (FBVs)](lessons/fbv/readme.md)
     - [Using HTTP methods](lessons/fbv_hhtp_methods/readme.md) 
     - [Decorators for FBVs](lessons/fbv_decorator/readme.md)
@@ -36,6 +34,8 @@ This repository is meant to contain the learning and practice done using django.
     - [Generic Model View](lessons/cbv_generic_modelview/readme.md)
     - [Mixin Based View](lessons/cbv_mixin_view/readme.md)
 
+- [Forms](lessons/form/readme.md)
+  - [Forms Fields](lessons/form_fields/readme.md)
 
 - [Templates](lessons/templates/readme.md)
 

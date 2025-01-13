@@ -1,7 +1,104 @@
 # Template
 
 ## Setting up
-- Setting up the template system in Django.
+
+1. **Create a Django Project**:
+   ```sh
+   django-admin startproject myproject
+   cd myproject
+   ```
+
+2. **Create a Django App**:
+   ```sh
+   python manage.py startapp myapp
+   ```
+
+3. **Add the App to Installed Apps**:
+   In `myproject/settings.py`, add `'myapp'` to the `INSTALLED_APPS` list:
+   ```python
+   INSTALLED_APPS = [
+       ...
+       'myapp',
+   ]
+   ```
+
+4. **Create a Templates Directory**:
+   Create a directory named `templates` inside your app directory (`myapp/templates`).
+
+5. **Configure Template Settings**:
+   In `myproject/settings.py`, configure the `TEMPLATES` setting to include the `templates` directory:
+   ```python
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.django.DjangoTemplates',
+           'DIRS': [BASE_DIR / 'myapp/templates'],
+           'APP_DIRS': True,
+           'OPTIONS': {
+               'context_processors': [
+                   'django.template.context_processors.debug',
+                   'django.template.context_processors.request',
+                   'django.contrib.auth.context_processors.auth',
+                   'django.contrib.messages.context_processors.messages',
+               ],
+           },
+       },
+   ]
+   ```
+
+6. **Create a Template File**:
+   Inside the `templates` directory, create an HTML file (e.g., `index.html`):
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>My Django App</title>
+   </head>
+   <body>
+       <h1>Hello, world!</h1>
+   </body>
+   </html>
+   ```
+
+7. **Create a View to Render the Template**:
+   In `myapp/views.py`, create a view function to render the template:
+   ```python
+   from django.shortcuts import render
+
+   def index(request):
+       return render(request, 'index.html')
+   ```
+
+8. **Map the View to a URL**:
+   In `myapp/urls.py`, map a URL to the view function:
+   ```python
+   from django.urls import path
+   from .views import index
+
+   urlpatterns = [
+       path('', index, name='index'),
+   ]
+   ```
+
+   Ensure `myapp/urls.py` is included in the project's `urls.py`:
+   ```python
+   from django.contrib import admin
+   from django.urls import path, include
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('', include('myapp.urls')),
+   ]
+   ```
+
+9. **Run the Development Server**:
+   ```sh
+   python manage.py runserver
+   ```
+
+10. **Access the Template**:
+    Open a web browser and navigate to `http://127.0.0.1:8000/` to see the rendered template.
+
+This setup configures the template system in Django, allowing you to render HTML templates in response to web requests.
 
 ## Template Operations
 
