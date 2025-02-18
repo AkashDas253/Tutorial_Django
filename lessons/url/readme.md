@@ -1,3 +1,112 @@
+## **Django URL Routing Cheatsheet**  
+
+#### **URL Configuration Overview**  
+- Uses `urlpatterns` in `urls.py` to map URLs to views.  
+- Supports dynamic parameters and namespace-based routing.  
+
+#### **Basic URL Mapping**  
+```python
+from django.urls import path
+from .views import my_view
+
+urlpatterns = [
+    path('home/', my_view, name='home'),
+]
+```
+
+#### **Including App URLs in Project URLs**  
+**Project-Level `urls.py`:**  
+```python
+from django.urls import include, path
+
+urlpatterns = [
+    path('app/', include('myapp.urls')),
+]
+```
+
+**App-Level `urls.py`:**  
+```python
+from django.urls import path
+from .views import my_view
+
+urlpatterns = [
+    path('', my_view, name='app-home'),
+]
+```
+
+#### **Dynamic URL Parameters**  
+```python
+from django.urls import path
+from .views import user_profile
+
+urlpatterns = [
+    path('user/<int:id>/', user_profile, name='user-profile'),
+]
+```
+- `<int:id>` → Matches integers.  
+- `<str:username>` → Matches strings.  
+- `<slug:slug>` → Matches slugs (`my-article-title`).  
+
+#### **Passing Parameters to Views**  
+```python
+def user_profile(request, id):
+    return HttpResponse(f"User ID: {id}")
+```
+
+#### **Reverse URL Resolution (`reverse()` & `{% url %}`)**  
+- Use `reverse()` in views to generate URLs.  
+- Use `{% url 'name' %}` in templates.  
+
+```python
+from django.urls import reverse
+reverse('home')  # Returns '/home/'
+```
+
+```html
+<a href="{% url 'home' %}">Home</a>
+```
+
+#### **Namespace in URLs**  
+- Used to differentiate apps with similar view names.  
+
+**Project `urls.py`:**  
+```python
+urlpatterns = [
+    path('blog/', include('blog.urls', namespace='blog')),
+]
+```
+
+**App `urls.py`:**  
+```python
+app_name = 'blog'
+
+urlpatterns = [
+    path('post/<int:id>/', post_view, name='post-detail'),
+]
+```
+
+**Usage in Templates:**  
+```html
+<a href="{% url 'blog:post-detail' id=5 %}">Post</a>
+```
+
+#### **Redirecting URLs**  
+- Use `redirect()` in views.  
+
+```python
+from django.shortcuts import redirect
+
+def my_redirect_view(request):
+    return redirect('home')
+```
+
+#### **Custom Error Pages**  
+- Create `404.html` and `500.html` inside `templates/`.  
+
+Let me know if you need modifications! 🚀
+
+---
+
 ## URL Routing in Django
 
 URL routing is a critical component of Django's web framework. It is responsible for mapping user requests to the appropriate views. In Django, this is done through a mechanism called **URLconf** (URL configuration). The URLconf is a set of patterns that define how URLs are matched to views.

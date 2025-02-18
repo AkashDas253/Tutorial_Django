@@ -20,7 +20,7 @@ This repository is meant to contain the learning and practice done using django.
   - [**Database Migrations**](lessons/database_migration/readme.md)  
   - [**Model Methods** ](lessons/model_methods/readme.md) 
 
-- Views (Business Logic Layer)
+- [Views (Business Logic Layer)](lessons/views/readme.md)
 
   - [Function-Based Views (FBVs)](lessons/fbv/readme.md)
     - [Using HTTP methods](lessons/fbv_hhtp_methods/readme.md) 
