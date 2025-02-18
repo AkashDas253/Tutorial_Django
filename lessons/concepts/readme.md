@@ -1,3 +1,101 @@
+## Cheatsheet list 
+- Django Basics  
+  - MVC & MVT Architecture  
+  - Installation & Setup  
+  - Project Structure  
+
+- Models  
+  - Fields  
+  - Meta Options  
+  - Query API  
+  - Relationships (`ForeignKey`, `OneToOneField`, `ManyToManyField`)  
+
+- Migrations  
+  - Creating Migrations  
+  - Applying Migrations  
+  - Rolling Back Migrations  
+
+- Views  
+  - Function-Based Views (FBV)  
+  - Class-Based Views (CBV)  
+  - Mixins  
+  - Context Data  
+
+- Templates  
+  - Template Language  
+  - Template Filters  
+  - Template Tags  
+  - Template Inheritance  
+
+- Forms  
+  - Form Classes  
+  - Model Forms  
+  - Form Validation  
+
+- Static Files  
+  - `STATICFILES_DIRS`  
+  - `STATIC_URL`  
+  - Serving Static Files  
+
+- URL Routing  
+  - `urls.py` Configuration  
+  - Path Converters  
+  - Named URLs  
+
+- Middleware  
+  - Custom Middleware  
+  - Built-in Middleware  
+
+- Authentication & Authorization  
+  - User Model  
+  - Authentication Views  
+  - Permissions  
+  - Groups & User Management  
+
+- Django ORM  
+  - QuerySet Methods (`filter`, `exclude`, `order_by`, `annotate`)  
+  - Aggregation  
+  - Transactions  
+
+- Django Admin  
+  - Admin Customization  
+  - Admin Actions  
+
+- REST Framework (DRF)  
+  - Serializers  
+  - ViewSets  
+  - Routers  
+  - Permissions  
+
+- Testing  
+  - Unit Tests  
+  - Integration Tests  
+  - Test Client  
+
+- Deployment  
+  - Gunicorn & WSGI  
+  - Nginx Configuration  
+  - Database Configuration  
+
+- Caching  
+  - In-Memory Caching  
+  - Database Caching  
+  - File-Based Caching  
+
+- Security  
+  - CSRF Protection  
+  - XSS Protection  
+  - SQL Injection Prevention  
+
+- WebSockets & Async Django  
+  - Django Channels  
+  - Consumers  
+  - WebSocket Routing  
+
+Let me know if you need another topic.
+
+---
+
 ## **Django Concepts and Subconcepts**  
 
 ### **Core of Django**
