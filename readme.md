@@ -145,11 +145,16 @@
 - [Django with IoT](lessons/django_iot/readme.md) - [Cheatsheet](lessons/cheatsheet_django_iot/readme.md)  
 
 
+---
+
 # Django cheatsheet concepts
 
 - [Concepts](lessons/concepts/readme.md)
 
 - [Django Basics](lessons/cheatsheet_django_basics/readme.md)  
+
+---
+
 - [Project Structure](lessons/cheatsheet_project_structure/readme.md)  
 - [Models](lessons/cheatsheet_models/readme.md)  
 - [Migrations](lessons/cheatsheet_migrations/readme.md)  
@@ -159,7 +164,7 @@
 - [Static & Media Files](lessons/cheatsheet_static_media_files/readme.md)  
 - [URL Routing](lessons/cheatsheet_url_routing/readme.md)  
 - [Middleware](lessons/cheatsheet_middleware/readme.md)  
-- [Authentication & Authorization](lessons/cheatsheet_authentication/readme.md)  
+- [Authentication & Authorization](lessons/cheatsheet_authentication_authorization/readme.md)  
 - [Django ORM](lessons/cheatsheet_django_orm/readme.md)  
 - [Django Admin](lessons/cheatsheet_django_admin/readme.md)  
 - [Django REST Framework (DRF)](lessons/cheatsheet_drf/readme.md)  
@@ -170,6 +175,9 @@
 - [Celery & Task Queues](lessons/cheatsheet_celery_task_queues/readme.md)  
 - [Django Extensions](lessons/cheatsheet_django_extensions/readme.md)  
 - [Django Signals](lessons/cheatsheet_django_signals/readme.md)  
+
+---
+
 - [HTMX & Django](lessons/cheatsheet_htmx_django/readme.md)  
 - [Django & PostgreSQL](lessons/cheatsheet_django_postgresql/readme.md)  
 - [Django & Redis](lessons/cheatsheet_django_redis/readme.md)  
@@ -206,3 +214,4 @@
 - [Django & Machine Learning](lessons/cheatsheet_django_ml/readme.md)  
 - [Django with IoT](lessons/cheatsheet_django_iot/readme.md)  
 
+---
