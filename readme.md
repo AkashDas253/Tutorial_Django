@@ -176,14 +176,15 @@
 - [Django Extensions](lessons/cheatsheet_django_extensions/readme.md)  
 - [Django Signals](lessons/cheatsheet_django_signals/readme.md)  
 
----
-
 - [HTMX & Django](lessons/cheatsheet_htmx_django/readme.md)  
 - [Django & PostgreSQL](lessons/cheatsheet_django_postgresql/readme.md)  
 - [Django & Redis](lessons/cheatsheet_django_redis/readme.md)  
 - [Django & Docker](lessons/cheatsheet_django_docker/readme.md)  
 - [Django & Kubernetes](lessons/cheatsheet_django_kubernetes/readme.md)  
-- [Django Multi-Tenancy](lessons/cheatsheet_django_multi_tenancy/readme.md)  
+- [Django Multi-Tenancy](lessons/cheatsheet_django_multi_tenancy/readme.md) 
+
+---
+
 - [API Rate Limiting](lessons/cheatsheet_api_rate_limiting/readme.md)  
 - [Background Tasks](lessons/cheatsheet_background_tasks/readme.md)  
 - [Database Optimization](lessons/cheatsheet_database_optimization/readme.md)  
