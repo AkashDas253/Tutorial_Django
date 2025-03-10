@@ -23,13 +23,13 @@ def my_view(request):
 
 | Filter | Description |
 |--------|------------|
-| `{{ text|lower }}` | Converts to lowercase. |
-| `{{ text|upper }}` | Converts to uppercase. |
-| `{{ text|title }}` | Capitalizes each word. |
-| `{{ text|length }}` | Gets string length. |
-| `{{ list|join:", " }}` | Joins list with a separator. |
-| `{{ date|date:"Y-m-d" }}` | Formats date. |
-| `{{ text|default:"No data" }}` | Sets default value if empty. |
+| ``{{ text|lower }}`` | Converts to lowercase. |
+| ``{{ text|upper }}`` | Converts to uppercase. |
+| ``{{ text|title }}`` | Capitalizes each word. |
+| ``{{ text|length }}`` | Gets string length. |
+| ``{{ list|join:", " }}`` | Joins list with a separator. |
+| ``{{ date|date:"Y-m-d" }}`` | Formats date. |
+| ``{{ text|default:"No data" }}`` | Sets default value if empty. |
 
 #### **Template Tags**  
 | Tag | Usage |

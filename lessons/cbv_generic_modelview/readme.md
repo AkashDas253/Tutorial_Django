@@ -291,6 +291,3 @@ Model views in Django, such as `CreateView`, `UpdateView`, `DeleteView`, `ListVi
 | `raise_exception`     | Used with `LoginRequiredMixin` to raise an exception if the user is not logged in.       | `raise_exception = True`                              |
 
 ---
-
-### **Summary**
-Django’s **generic model views** (Create, Update, Delete, List, Detail) provide the building blocks for interacting with your model data in a structured and DRY (Don’t Repeat Yourself) manner. The attributes listed above allow for customization and extension of these views to suit specific application needs. Whether you’re handling form submissions, displaying object details, or listing a collection of objects, these attributes give you the flexibility to manage your model data easily.

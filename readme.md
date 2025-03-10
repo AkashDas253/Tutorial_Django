@@ -32,20 +32,35 @@
 - [Database Migrations](lessons/database_migration/readme.md) - [Cheatsheet](lessons/cheatsheet_database_migration/readme.md)  
 - [Model Methods](lessons/model_methods/readme.md) - [Cheatsheet](lessons/cheatsheet_model_methods/readme.md)  
 
-### [Views (Business Logic Layer)](lessons/views/readme.md) - [Cheatsheet](lessons/cheatsheet_views/readme.md)  
-- [Function-Based Views (FBVs)](lessons/fbv/readme.md) - [Cheatsheet](lessons/cheatsheet_fbv/readme.md)  
-    - [Using HTTP Methods](lessons/fbv_http_methods/readme.md) - [Cheatsheet](lessons/cheatsheet_fbv_http_methods/readme.md)  
-    - [Decorators for FBVs](lessons/fbv_decorator/readme.md) - [Cheatsheet](lessons/cheatsheet_fbv_decorator/readme.md)  
-- [Class-Based Views (CBVs)](lessons/cbv/readme.md) - [Cheatsheet](lessons/cheatsheet_cbv/readme.md)  
-    - [CBV Components](lessons/cbv_components/readme.md) - [Cheatsheet](lessons/cheatsheet_cbv_components/readme.md)  
-    - [CBV Types](lessons/cbv_types/readme.md) - [Cheatsheet](lessons/cheatsheet_cbv_types/readme.md)  
-        - [Base CBV](lessons/cbv_base/readme.md)
-        - [Template View](lessons/templateview/readme.md)
-        - [Generic View](lessons/genericview/readme.md)
-        - [Generic Model View](lessons/cbv_generic_modelview/readme.md)
-- [Mixin Based View](lessons/cbv_mixin_view/readme.md)
+---
+
+### [Views (Business Logic Layer)](lessons/views/readme.md) - [Cheatsheet](lessons/cheatsheet_views/readme.md) 
+
+- [Function-Based Views (FBVs)](lessons/fbv/readme.md)  
+    - [HTTP MEthods](lessons/fbv_hhtp_methods/readem.md)
+- [Class-Based Views (CBVs)](lessons/cbv/readme.md)  
+    - [CBV Components](lessons/cbv_components/readme.md)
+    - [CBV Types](lessons/cbv_types/readme.md) 
+    - [Built-in Generic Views](lessons/generic_views/readme.md)
+
+    ---
+    - [Base CBV](lessons/cbv_base/readme.md)
+    - [Template View](lessons/templateview/readme.md)
+    - [Generic View](lessons/genericview/readme.md)
+    - [Generic Model View](lessons/cbv_generic_modelview/readme.md)
+    ---
+  
+- [Handling Request Methods](lessons/request_methods/readme.md)  
+- [Middleware Integration](lessons/middleware/readme.md)  
+- [Decorators for FBVs](lessons/fbv_decorator/readme.md)  
+- [Decorators for CBVs](lessons/cbv_decorator/readme.md)  
+- [Mixins in CBVs](lessons/cbv_mixins/readme.md)  
+- [Custom CBVs](lessons/custom_cbv/readme.md)    
+- [Asynchronous Views in Django](lessons/async_views/readme.md)
 
 ### [Templates](lessons/templates/readme.md) - [Cheatsheet](lessons/cheatsheet_templates/readme.md)  
+
+---
 
 ### [Forms](lessons/forms/readme.md) - [Cheatsheet](lessons/cheatsheet_forms/readme.md)  
 - [Forms Fields](lessons/form_fields/readme.md) - [Cheatsheet](lessons/cheatsheet_form_fields/readme.md)  
