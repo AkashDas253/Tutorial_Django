@@ -230,3 +230,29 @@ class MyView(View):
 | **Static/Class Methods**  | Helper methods for reusable logic                                         |
 | **Signals**               | `post_save`, `pre_delete`                                                 |
 | **Utilities**             | `@method_decorator`, middleware                                           |
+
+---
+
+## Components of CBV
+
+| **Category**            | **Component**                         | **Examples/Details**                                                   |
+|-------------------------|--------------------------------------|------------------------------------------------------------------------|
+| **Methods**             | **Lifecycle**                        | `dispatch`, `http_method_not_allowed`                                  |
+|                         | **HTTP Handlers**                    | `get`, `post`, `put`, `delete`, `patch`                               |
+|                         | **Customization**                    | `get_queryset`, `get_context_data`, `get_object`                      |
+|                         | **Template Handling**                | `get_template_names`, `render_to_response`                            |
+|                         | **Form Handling**                    | `form_valid`, `form_invalid`, `get_form_class`, `get_success_url`     |
+| **Attributes**          | **View-Specific**                     | `template_name`, `content_type`                                       |
+|                         | **Model-Related**                     | `model`, `queryset`, `context_object_name`                            |
+|                         | **Form-Related**                      | `form_class`, `fields`, `initial`                                     |
+|                         | **URL Handling**                      | `success_url`                                                         |
+| **Meta-Class & Mixins** | **Meta-Class**                        | `Meta` (custom configurations)                                        |
+|                         | **Mixins**                            | `LoginRequiredMixin`, `PermissionRequiredMixin`, `FormMixin`          |
+| **Properties**          | **Dynamic Attributes**                | `template_engine`, `request`, `kwargs`                                |
+| **Class Variables**     | **Configuration**                     | `http_method_names` (Allowed HTTP methods)                            |
+| **Middleware**         | **Integration**                        | Custom logic via `dispatch`                                           |
+| **Exceptions**         | **Handling**                           | `PermissionDenied`, `Http404`                                         |
+| **Static/Class Methods** | **Reusable Logic**                   | `@staticmethod some_helper()`, `@classmethod some_shared_logic()`     |
+| **Parent Classes**      | **Common CBVs**                       | `View`, `TemplateView`, `ListView`, `DetailView`, `FormView`          |
+| **Signals**            | **Django Signals**                     | `post_save`, `pre_delete`                                             |
+| **Utilities**          | **Decorators & Helpers**               | `@method_decorator(login_required)`, Middleware integration           |

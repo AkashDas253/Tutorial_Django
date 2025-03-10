@@ -1,100 +1,117 @@
-### **Django Models Cheatsheet**  
 
-#### **Key Features of Models**  
-- Defines database schema as Python classes.  
-- Inherits from `django.db.models.Model`.  
-- Uses ORM (Object-Relational Mapping) for database operations.  
+## Django Model: Comprehensive Cheatsheet  
 
-#### **Defining a Model**  
-```python
-from django.db import models
+---
 
-class MyModel(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-```
-
-#### **Model Fields**  
-| Field Type | Description |
-|------------|------------|
-| `CharField(max_length=n)` | String with max length `n`. |
-| `TextField()` | Large text. |
-| `IntegerField()` | Integer values. |
-| `FloatField()` | Floating-point values. |
-| `BooleanField()` | `True` or `False`. |
-| `DateTimeField(auto_now_add=True)` | Stores timestamp when created. |
-| `DateField(auto_now=True)` | Stores date, updates on modification. |
-| `ForeignKey(Model, on_delete=models.CASCADE)` | One-to-many relation. |
-| `ManyToManyField(Model)` | Many-to-many relation. |
-
-#### **Model Meta Options**  
-- Customizes model behavior.  
-- Defined inside `class Meta:`.  
-
-```python
-class MyModel(models.Model):
-    name = models.CharField(max_length=100)
-
-    class Meta:
-        ordering = ['name']  # Default ordering
-        verbose_name = "Custom Name"
-```
-
-#### **Primary Key (PK) & Auto Fields**  
-- `id` is created automatically as the primary key.  
-- Can define manually using `primary_key=True`.  
-
-```python
-class CustomModel(models.Model):
-    custom_id = models.AutoField(primary_key=True)
-```
-
-#### **Database Relationships**  
-| Relationship | Field Type |
-|-------------|------------|
-| One-to-One | `OneToOneField(Model, on_delete=models.CASCADE)` |
-| One-to-Many | `ForeignKey(Model, on_delete=models.CASCADE)` |
-| Many-to-Many | `ManyToManyField(Model)` |
-
-#### **CRUD Operations**  
-- **Create:** `MyModel.objects.create(name="John", age=30)`  
-- **Read:** `MyModel.objects.all()`, `MyModel.objects.filter(age=30)`  
-- **Update:**  
+### Syntax:
   ```python
-  obj = MyModel.objects.get(id=1)
-  obj.age = 35
-  obj.save()
-  ```  
-- **Delete:**  
-  ```python
-  obj = MyModel.objects.get(id=1)
-  obj.delete()
-  ```
+  # app/models.py
+  from django.db import models  # Import models module
 
-#### **Model Methods**  
-- Custom methods inside models for additional logic.  
+  class ModelName(models.Model):  # Define a new model
+      field_name = models.FieldType()  # Define model fields
+      # Additional fields can be added here
 
-```python
-class MyModel(models.Model):
-    name = models.CharField(max_length=100)
+      class Meta:  # Optional
+          key = value  # Meta options for the model
+          # Additional meta options can be added here
 
-    def get_uppercase_name(self):
-        return self.name.upper()
+      def function(self):  # Optional
+          # Custom method for the model
+          return specific_value
+
+      def __str__(self):  # Optional but recommended
+          # String representation of the object
+          return string_representation  # Return string representation of object
 ```
 
-#### **QuerySet Methods**  
-| Method | Description |
-|--------|------------|
-| `all()` | Returns all records. |
-| `filter(condition)` | Filters records based on condition. |
-| `exclude(condition)` | Excludes records matching condition. |
-| `order_by(field)` | Orders records by field. |
-| `count()` | Returns count of records. |
-| `first()/last()` | Returns first or last record. |
-| `values()` | Returns specific fields as dictionary. |
+---
 
-#### **Migrations**  
-- **Create Migration:** `python manage.py makemigrations`  
-- **Apply Migration:** `python manage.py migrate`  
-- **View SQL:** `python manage.py sqlmigrate app_name migration_number`  
+### Model Definition  
+
+| Concept | Syntax | Description |
+|---------|--------|-------------|
+| Model Class | `class ModelName(models.Model):` | Defines a model as a table. |
+| Field | `field_name = models.FieldType(options)` | Defines attributes as table columns. |
+| Meta Options | `class Meta:` | Defines metadata for table behavior. |
+| String Representation | `def __str__(self):` | Returns a human-readable model name. |
+
+### Common Field Types  
+
+| Field Type | Syntax | Description |
+|------------|--------|-------------|
+| `CharField` | `models.CharField(max_length=255)` | Stores short text. |
+| `TextField` | `models.TextField()` | Stores long text. |
+| `IntegerField` | `models.IntegerField()` | Stores integers. |
+| `FloatField` | `models.FloatField()` | Stores floating-point numbers. |
+| `BooleanField` | `models.BooleanField()` | Stores `True/False`. |
+| `DateField` | `models.DateField(auto_now_add=True)` | Stores dates. |
+| `DateTimeField` | `models.DateTimeField(auto_now=True)` | Stores timestamps. |
+| `ForeignKey` | `models.ForeignKey(Model, on_delete=models.CASCADE)` | Defines a many-to-one relationship. |
+| `ManyToManyField` | `models.ManyToManyField(Model)` | Defines a many-to-many relationship. |
+| `OneToOneField` | `models.OneToOneField(Model, on_delete=models.CASCADE)` | Defines a one-to-one relationship. |
+
+### Field Options  
+
+| Option | Usage | Description |
+|--------|-------|-------------|
+| `null=True` | `models.CharField(null=True)` | Allows `NULL` values in the database. |
+| `blank=True` | `models.CharField(blank=True)` | Allows empty input in forms. |
+| `default=value` | `models.IntegerField(default=0)` | Sets a default value. |
+| `unique=True` | `models.EmailField(unique=True)` | Ensures unique values. |
+| `choices=` | `models.CharField(choices=[(1, "A"), (2, "B")])` | Defines dropdown choices. |
+| `db_index=True` | `models.IntegerField(db_index=True)` | Adds a database index. |
+
+### Model Meta Options  
+
+| Option | Usage | Description |
+|--------|-------|-------------|
+| `db_table` | `db_table = "custom_table_name"` | Custom table name. |
+| `ordering` | `ordering = ["-created_at"]` | Default ordering. |
+| `verbose_name` | `verbose_name = "Model Name"` | Singular display name. |
+| `verbose_name_plural` | `verbose_name_plural = "Models"` | Plural display name. |
+
+### Querying Models  
+
+| Operation | Syntax |
+|-----------|--------|
+| Create | `Model.objects.create(field=value)` |
+| Retrieve All | `Model.objects.all()` |
+| Retrieve One | `Model.objects.get(id=1)` |
+| Filter | `Model.objects.filter(field=value)` |
+| Exclude | `Model.objects.exclude(field=value)` |
+| Order By | `Model.objects.order_by("field")` |
+| Update | `Model.objects.filter(id=1).update(field=value)` |
+| Delete | `Model.objects.get(id=1).delete()` |
+
+### Model Inheritance  
+
+| Type | Syntax | Description |
+|------|--------|-------------|
+| Abstract Base Class | `class Base(models.Model): class Meta: abstract = True` | Defines reusable fields. |
+| Multi-Table | `class Child(Base):` | Creates separate tables for parent-child. |
+| Proxy Model | `class Proxy(Model): class Meta: proxy = True` | Modifies behavior without changing structure. |
+
+### Migrations  
+
+| Command | Syntax |
+|---------|--------|
+| Create Migration | `python manage.py makemigrations` |
+| Apply Migration | `python manage.py migrate` |
+| Show Migrations | `python manage.py showmigrations` |
+
+### Model Signals  
+
+| Signal | Usage |
+|--------|-------|
+| `pre_save` | `@receiver(pre_save, sender=Model)` |
+| `post_save` | `@receiver(post_save, sender=Model)` |
+| `pre_delete` | `@receiver(pre_delete, sender=Model)` |
+| `post_delete` | `@receiver(post_delete, sender=Model)` |
+
+### Transactions  
+
+| Function | Usage |
+|----------|-------|
+| Atomic Transaction | `with transaction.atomic():` |
+| Row Locking | `Model.objects.select_for_update()` |

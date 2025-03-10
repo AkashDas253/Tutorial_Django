@@ -25,51 +25,69 @@
 - [Django ORM](lessons/django_orm/readme.md) - [Cheatsheet](lessons/cheatsheet_django_orm/readme.md)  
 - [Django Admin](lessons/django_admin/readme.md) - [Cheatsheet](lessons/cheatsheet_django_admin/readme.md)  
 
-### [Models (Database Layer)](lessons/models/readme.md) - [Cheatsheet](lessons/cheatsheet_models/readme.md)  
-- [Model Definition](lessons/model_creation/readme.md) - [Cheatsheet](lessons/cheatsheet_model_creation/readme.md)  
-- [Model Relationships](lessons/model_relationships/readme.md) - [Cheatsheet](lessons/cheatsheet_model_relationships/readme.md)  
-- [Model Queries (ORM)](lessons/model_query/readme.md) - [Cheatsheet](lessons/cheatsheet_model_query/readme.md)  
-- [Database Migrations](lessons/database_migration/readme.md) - [Cheatsheet](lessons/cheatsheet_database_migration/readme.md)  
-- [Model Methods](lessons/model_methods/readme.md) - [Cheatsheet](lessons/cheatsheet_model_methods/readme.md)  
-
 ---
+
+### [Models (Database Layer)](lessons/models/readme.md) - [Cheatsheet](lessons/cheatsheet_models/readme.md)  
+- [Model Definition](lessons/model_creation/readme.md)
+- [Model Relationships](lessons/model_relationships/readme.md) 
+- [Model Queries (ORM)](lessons/model_query/readme.md) 
+- [Database Migrations](lessons/database_migration/readme.md) 
+- [Model Methods](lessons/model_methods/readme.md) 
 
 ### [Views (Business Logic Layer)](lessons/views/readme.md) - [Cheatsheet](lessons/cheatsheet_views/readme.md) 
 
 - [Function-Based Views (FBVs)](lessons/fbv/readme.md)  
-    - [HTTP Methods Handling](lessons/fbv_http_methods/readme.md)
+    - [HTTP Methods Handling in FBV](lessons/fbv_http_methods/readme.md)
     - [Decorators for FBV](lessons/fbv_decorators/readme.md) 
 - [Class-Based Views (CBVs)](lessons/cbv/readme.md)  
     - [CBV Components](lessons/cbv_components/readme.md)
     - [CBV Types](lessons/cbv_types/readme.md) 
-    - [Built-in Generic Views](lessons/generic_views/readme.md)
 
-    ---
     - [Base CBV](lessons/cbv_base/readme.md)
-    - [Template View](lessons/templateview/readme.md)
-    - [Generic View](lessons/genericview/readme.md)
-    - [Generic Model View](lessons/cbv_generic_modelview/readme.md)
-    ---
+    
+    - [Generic View](lessons/generic_views/readme.md)
+        - [Template View](lessons/templateview/readme.md)
+    - [Generic Model View(Same as Editing View)](lessons/cbv_generic_model_view/readme.md)
+    - [Generic Display Views](lessons/cbv_generic_display_views/readme.md)
+    - [Generic Editing Views](lessons/cbv_generic_editing_views/readme.md)
+    - [Generic Form Handling Views](lessons/cbv_generic_form_handling_views/readme.md)
+    - [Generic Date-Based Views](lessons/cbv_generic_date_based_views/readme.md)
+    - [Generic Processing Views](lessons/cbv_generic_processing_views/readme.md)
+    
+    - [Authentication-Based Views](lessons/cbv_authentication_views/readme.md)
+    - [Mixins with Views](lessons/cbv_mixins_views/readme.md)
 
     - [Custom CBVs](lessons/custom_cbv/readme.md)  
     - [Mixins in CBVs](lessons/cbv_mixins/readme.md) 
 - [Handling Request Methods](lessons/request_methods/readme.md)  
-- [Middleware Integration](lessons/middleware/readme.md)   
+    - [HTTP Methods Handling in FBV](lessons/fbv_http_methods/readme.md)
+- [Middleware Integration](lessons/middleware_views/readme.md)   
 - [Decorators](lessons/decorators/readme.md) 
     - [Decorators for FBV](lessons/fbv_decorators/readme.md) 
-- [Asynchronous Views in Django](lessons/async_views/readme.md)
+- [Asynchronous Views in Django](lessons/asynchronous_views/readme.md)
 
 ### [Templates](lessons/templates/readme.md) - [Cheatsheet](lessons/cheatsheet_templates/readme.md)  
 
----
-
 ### [Forms](lessons/forms/readme.md) - [Cheatsheet](lessons/cheatsheet_forms/readme.md)  
-- [Forms Fields](lessons/form_fields/readme.md) - [Cheatsheet](lessons/cheatsheet_form_fields/readme.md)  
+- [Forms Fields](lessons/form_fields/readme.md) 
+- [Basic Forms (`forms.Form`)](lessons/form_type_basic/readme.md) 
+- [Model Forms (`forms.ModelForm`)](lessons/form_type_model/readme.md)
+- [Formsets](lessons/form_formset/readme.md)  
+- [Rendering Form](lessons/form_render/readme.md)
 
 ### [URL Routing](lessons/url_routing/readme.md) - [Cheatsheet](lessons/cheatsheet_url_routing/readme.md)  
-- [URL Setup](lessons/url_setup/readme.md) - [Cheatsheet](lessons/cheatsheet_url_setup/readme.md)  
-- [URL Pattern](lessons/url_pattern/readme.md) - [Cheatsheet](lessons/cheatsheet_url_pattern/readme.md)  
-- [URL Namespace](lessons/url_namespace/readme.md) - [Cheatsheet](lessons/cheatsheet_url_namespace/readme.md)  
+- [URL Setup](lessons/url_setup/readme.md)  
+- [URL Pattern](lessons/url_pattern/readme.md) 
+- [URL Namespace](lessons/url_namespace/readme.md) 
+
+### [Asynchronous in Django(>3.1)](lessons/asynchronous/readme.md) 
+- [Asynchronous Views in Django](lessons/asynchronous_views/readme.md)
+
+
+### [Middleware](lessons/middleware/readme.md) 
+- [Middleware for Views](lessons/middleware_views/readme.md)
+
+---
 
 ### Advanced Topics  
 - [Static & Media Files](lessons/static_media_files/readme.md) - [Cheatsheet](lessons/cheatsheet_static_media_files/readme.md)  
@@ -83,7 +101,7 @@
 ### [Testing & Debugging](lessons/testing/readme.md) - [Cheatsheet](lessons/cheatsheet_testing/readme.md)  
 
 ### Third-Party Tools & Integrations  
-- [Django REST Framework (DRF)](lessons/drf/readme.md) - [Cheatsheet](lessons/cheatsheet_drf/readme.md)  
+- [Django REST Framework (DRF)](lessons/drf/readme.md) 
 - [GraphQL with Django](lessons/graphql_django/readme.md) - [Cheatsheet](lessons/cheatsheet_graphql_django/readme.md)  
 - [HTMX & Django](lessons/htmx_django/readme.md) - [Cheatsheet](lessons/cheatsheet_htmx_django/readme.md)  
 
