@@ -37,7 +37,8 @@
 ### [Views (Business Logic Layer)](lessons/views/readme.md) - [Cheatsheet](lessons/cheatsheet_views/readme.md) 
 
 - [Function-Based Views (FBVs)](lessons/fbv/readme.md)  
-    - [HTTP MEthods](lessons/fbv_hhtp_methods/readem.md)
+    - [HTTP Methods Handling](lessons/fbv_http_methods/readme.md)
+    - [Decorators for FBV](lessons/fbv_decorators/readme.md) 
 - [Class-Based Views (CBVs)](lessons/cbv/readme.md)  
     - [CBV Components](lessons/cbv_components/readme.md)
     - [CBV Types](lessons/cbv_types/readme.md) 
@@ -49,13 +50,13 @@
     - [Generic View](lessons/genericview/readme.md)
     - [Generic Model View](lessons/cbv_generic_modelview/readme.md)
     ---
-  
+
+    - [Custom CBVs](lessons/custom_cbv/readme.md)  
+    - [Mixins in CBVs](lessons/cbv_mixins/readme.md) 
 - [Handling Request Methods](lessons/request_methods/readme.md)  
-- [Middleware Integration](lessons/middleware/readme.md)  
-- [Decorators for FBVs](lessons/fbv_decorator/readme.md)  
-- [Decorators for CBVs](lessons/cbv_decorator/readme.md)  
-- [Mixins in CBVs](lessons/cbv_mixins/readme.md)  
-- [Custom CBVs](lessons/custom_cbv/readme.md)    
+- [Middleware Integration](lessons/middleware/readme.md)   
+- [Decorators](lessons/decorators/readme.md) 
+    - [Decorators for FBV](lessons/fbv_decorators/readme.md) 
 - [Asynchronous Views in Django](lessons/async_views/readme.md)
 
 ### [Templates](lessons/templates/readme.md) - [Cheatsheet](lessons/cheatsheet_templates/readme.md)  
