@@ -1,6 +1,3 @@
-Here’s a refined and expanded **Django Static & Media Files Cheatsheet** with additional details:  
-
----
 
 ## **Django Static & Media Files Cheatsheet**  
 
