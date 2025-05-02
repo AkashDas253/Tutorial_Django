@@ -1,131 +1,178 @@
-## **`django` Modules and Submodules:**
+## **Django Internal Modules and Submodules**
 
-- **`# Use django.conf`**
-  - `django.conf.settings` # Access Django project settings.
-  - `django.conf.urls` # URL configuration for routing.
+### **1. `django.conf`**
 
-- **`# Use django.db`**
-  - `django.db.models.Model` # Base class for Django models.
-  - `django.db.models.CharField` # Character field for model fields.
-  - `django.db.models.IntegerField` # Integer field for model fields.
-  - `django.db.models.ForeignKey` # Foreign key field for relationships between models.
-  - `django.db.models.OneToOneField` # One-to-one relationship field.
-  - `django.db.models.ManyToManyField` # Many-to-many relationship field.
-  - `django.db.models.DateTimeField` # Date-time field for models.
-  - `django.db.models.QuerySet` # Represents a set of model instances.
-  - `django.db.models.Manager` # Custom manager for model querysets.
+* Handles project configurations.
+* **Submodules:**
 
-- **`# Use django.forms`**
-  - `django.forms.Form` # Base class for Django forms.
-  - `django.forms.ModelForm` # Form class for creating models from forms.
-  - `django.forms.CharField` # Character field for forms.
-  - `django.forms.IntegerField` # Integer field for forms.
-  - `django.forms.EmailField` # Email field for forms.
-  - `django.forms.DateField` # Date field for forms.
-  - `django.forms.BooleanField` # Boolean field for forms.
-  - `django.forms.FileField` # File field for forms.
+  * `settings` – Configuration settings manager.
+  * `global_settings` – Default settings.
+  * `urls` – URL configuration handling.
 
-- **`# Use django.views`**
-  - `django.views.View` # Base view class for handling HTTP requests.
-  - `django.views.generic.TemplateView` # Render templates in views.
-  - `django.views.generic.ListView` # Display a list of model instances.
-  - `django.views.generic.DetailView` # Display details for a single model instance.
-  - `django.views.generic.CreateView` # Display a form for creating a new model instance.
-  - `django.views.generic.UpdateView` # Display a form for updating a model instance.
-  - `django.views.generic.DeleteView` # Display a confirmation form to delete a model instance.
+---
 
-- **`# Use django.urls`**
-  - `django.urls.path` # Define URL patterns.
-  - `django.urls.re_path` # Define URL patterns with regular expressions.
-  - `django.urls.include` # Include URL patterns from another module.
+### **2. `django.core`**
 
-- **`# Use django.middleware`**
-  - `django.middleware.common.CommonMiddleware` # Middleware to handle common HTTP operations.
-  - `django.middleware.security.SecurityMiddleware` # Middleware for managing security settings.
-  - `django.middleware.csrf.CsrfViewMiddleware` # Middleware for CSRF protection.
-  - `django.middleware.gzip.GZipMiddleware` # Middleware to handle GZip compression.
-  - `django.middleware.transaction.TransactionMiddleware` # Middleware for handling database transactions.
+* Core framework utilities and bootstrapping logic.
+* **Submodules:**
 
-- **`# Use django.contrib`**
-  - `django.contrib.admin` # Admin interface for managing models and data.
-    - `django.contrib.admin.ModelAdmin` # Custom configuration for model management in the admin interface.
-    - `django.contrib.admin.site.register` # Register models with the admin interface.
-  - `django.contrib.auth` # User authentication and authorization system.
-    - `django.contrib.auth.models.User` # Default User model.
-    - `django.contrib.auth.forms.UserCreationForm` # Form for creating a new user.
-    - `django.contrib.auth.forms.AuthenticationForm` # Form for authenticating a user.
-    - `django.contrib.auth.views.LoginView` # Built-in login view.
-    - `django.contrib.auth.views.LogoutView` # Built-in logout view.
-  - `django.contrib.sessions` # Session management system.
-  - `django.contrib.messages` # Framework for temporary messages in views.
-  - `django.contrib.staticfiles` # Static files management.
+  * `handlers` – WSGI and ASGI request handling.
+  * `management` – Command-line tools (`manage.py`).
+  * `mail` – Email backend.
+  * `serializers` – Data serializers (e.g., XML).
+  * `validators` – Built-in validation logic.
+  * `exceptions` – Core exceptions.
+  * `cache` – Backend cache interfaces.
 
-- **`# Use django.template`**
-  - `django.template.Context` # Represents the context for rendering templates.
-  - `django.template.loader.get_template` # Load a template from a file.
-  - `django.template.loader.render_to_string` # Render a template to a string.
+---
 
-- **`# Use django.http`**
-  - `django.http.HttpRequest` # Represents an HTTP request.
-  - `django.http.HttpResponse` # Represents an HTTP response.
-  - `django.http.JsonResponse` # Represents a JSON response.
-  - `django.http.Http404` # Exception for raising 404 errors.
-  - `django.http.HttpResponseRedirect` # Redirects to a new URL.
+### **3. `django.db`**
 
-- **`# Use django.contrib.sites`**
-  - `django.contrib.sites.models.Site` # Model representing a website.
-  - `django.contrib.sites.shortcuts.get_current_site` # Get the current site from the request.
+* ORM and database abstraction.
+* **Submodules:**
 
-- **`# Use django.db.migrations`**
-  - `django.db.migrations.Migration` # Base class for creating migration files.
-  - `django.db.migrations.RunPython` # Run custom Python code during migrations.
-  - `django.db.migrations.RunSQL` # Run raw SQL commands during migrations.
-  - `django.db.migrations.AlterField` # Alter a model field in a migration.
+  * `models` – Field types, model base, managers.
+  * `backends` – Database-specific backends (SQLite, PostgreSQL, etc.).
+  * `migrations` – Schema and data migrations.
+  * `transaction` – Database transaction management.
+  * `utils` – ORM helpers.
+  * `connection` – Database connection handler.
 
-- **`# Use django.contrib.syndication`**
-  - `django.contrib.syndication.views.Feed` # Base class for generating feeds (RSS, Atom).
+---
 
-- **`# Use django.contrib.markup`**
-  - `django.contrib.markup.templatetags.markup` # Provides filters for rendering markdown in templates.
+### **4. `django.http`**
 
-- **`# Use django.test`**
-  - `django.test.TestCase` # Base class for creating tests for Django applications.
-  - `django.test.Client` # A test client for simulating requests to the Django application.
+* Manages HTTP requests and responses.
+* **Submodules:**
 
-- **`# Use django.db.backends`**
-  - `django.db.backends.postgresql` # PostgreSQL database backend.
-  - `django.db.backends.mysql` # MySQL database backend.
-  - `django.db.backends.sqlite3` # SQLite database backend.
+  * `request` – HttpRequest class.
+  * `response` – HttpResponse, JsonResponse, etc.
+  * `multipartparser` – File upload parsing.
+  * `cookie` – Cookie parsing/management.
 
-- **`# Use django.db.models.query`**
-  - `django.db.models.query.QuerySet` # Represents a collection of model instances.
-  - `django.db.models.query.F` # Represents a field reference in queries.
+---
 
-- **`# Use django.db.models.signals`**
-  - `django.db.models.signals.pre_save` # Signal sent before a model is saved.
-  - `django.db.models.signals.post_save` # Signal sent after a model is saved.
-  - `django.db.models.signals.pre_delete` # Signal sent before a model is deleted.
-  - `django.db.models.signals.post_delete` # Signal sent after a model is deleted.
+### **5. `django.urls`**
 
-- **`# Use django.db.utils`**
-  - `django.db.utils.ConnectionHandler` # Handles database connections.
+* Routing system for mapping URLs to views.
+* **Submodules:**
 
-- **`# Use django.db.transaction`**
-  - `django.db.transaction.atomic` # Mark a block of code to be run within a database transaction.
-  - `django.db.transaction.commit` # Commit a database transaction.
-  - `django.db.transaction.rollback` # Rollback a database transaction.
+  * `conf` – `include()` and `path()` functions.
+  * `resolvers` – URL pattern resolution.
+  * `exceptions` – URL resolver exceptions.
 
-- **`# Use django.views.decorators`**
-  - `django.views.decorators.cache.cache_page` # Cache the output of a view.
-  - `django.views.decorators.csrf.csrf_protect` # Protect a view with CSRF tokens.
-  - `django.views.decorators.http.require_http_methods` # Require specific HTTP methods for a view.
+---
 
-- **`# Use django.core`**
-  - `django.core.mail.send_mail` # Send an email.
-  - `django.core.cache.cache` # Access the cache framework.
-  - `django.core.management.call_command` # Call management commands programmatically.
+### **6. `django.template`**
 
-- **`# Use django.contrib.auth.tokens`**
-  - `django.contrib.auth.tokens.default_token_generator` # Default token generator for password reset.
+* Template rendering engine.
+* **Submodules:**
+
+  * `loader` – Template loaders.
+  * `context` – Context processing.
+  * `defaultfilters` – Built-in filters.
+  * `defaulttags` – Built-in template tags.
+  * `engine` – Template engines interface.
+
+---
+
+### **7. `django.views`**
+
+* Built-in view utilities.
+* **Submodules:**
+
+  * `generic` – Class-based views (CBVs).
+  * `decorators` – View decorators (e.g., `@login_required`).
+  * `static` – Serving static files.
+  * `debug` – Debugging views and error reporting.
+
+---
+
+### **8. `django.middleware`**
+
+* Standard middleware components.
+* **Submodules:**
+
+  * `security` – Security headers middleware.
+  * `csrf` – CSRF protection.
+  * `clickjacking` – X-Frame-Options header.
+  * `common` – General HTTP middleware.
+  * `locale` – Internationalization.
+  * `sessions` – Session middleware.
+
+---
+
+### **9. `django.contrib`**
+
+* Built-in pluggable apps.
+* **Submodules (apps):**
+
+  * `admin` – Django Admin interface.
+  * `auth` – Authentication and permissions.
+  * `sessions` – Session framework.
+  * `messages` – Flash messaging system.
+  * `staticfiles` – Static file management.
+  * `contenttypes` – Generic model types.
+  * `sites`, `sitemaps`, `redirects`, `flatpages` – Additional features.
+
+---
+
+### **10. `django.forms`**
+
+* Form and field classes.
+* **Submodules:**
+
+  * `models` – `ModelForm`.
+  * `fields`, `widgets`, `forms` – Form logic and rendering.
+
+---
+
+### **11. `django.dispatch`**
+
+* Django’s internal signal framework.
+* Used for loosely-coupled callbacks (e.g., `post_save`, `request_started`).
+
+---
+
+### **12. `django.test`**
+
+* Testing tools built on Python `unittest`.
+* **Submodules:**
+
+  * `client` – Test client for HTTP requests.
+  * `runner` – Test runner and setup tools.
+  * `utils` – Assertions and testing helpers.
+
+---
+
+### **13. `django.utils`**
+
+* Common internal utility functions.
+* **Submodules:**
+
+  * `timezone` – Date/time helpers.
+  * `translation` – i18n support.
+  * `text`, `dateparse`, `html`, `deprecation`, etc.
+
+---
+
+### **14. `django.apps`**
+
+* App registry and configuration system.
+* `AppConfig` class to configure apps.
+
+---
+
+### **15. `django.contrib.staticfiles`**
+
+* Collects and serves static files.
+* Uses a finder and storage mechanism.
+
+---
+
+### **16. `django.contrib.messages`**
+
+* Framework for temporary messages (info, success, error).
+* Middleware-based storage (cookie or session).
 
 ---
