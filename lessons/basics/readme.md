@@ -1,4 +1,4 @@
-## **Django Basics – Comprehensive Note**
+## **Django Basics**
 
 ### **Introduction**
 
